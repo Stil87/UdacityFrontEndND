@@ -1,0 +1,131 @@
+
+body{
+    background-color: black;
+}
+
+a:link{
+    color: aliceblue;
+}
+a:visited{
+    color: aliceblue;
+}
+
+/* overall container */
+
+.container {
+    display: grid;
+    width: auto;
+    height: 95%;
+    justify-content: center;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 100px 500px 50p;
+    grid-template-areas: "bn bn bn bn bn" "ct ct ct ct ct" "ft ft ft ft ft";
+    
+    border: 5px solid black;
+    
+}
+
+/*  class single box like 'content' within the container */
+
+.box {
+    border: 4px solid black;
+    width: 100%;
+}
+
+/* ids single boxes in the container */
+
+#banner {
+    grid-area: bn;
+    height: 300px;
+    text-align: center;
+    text-align: center;
+    background-image: url(/Users/tillschmidt/Documents/Dev/web/udacity_FE/HTML/images/freedom.jpg);
+    background-size: cover;
+    color: aliceblue;
+    
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    grid-area: ct;
+}
+
+#sidebar {
+    grid-area: sb;
+    display: none;
+}
+
+#footer {
+    grid-area: ft;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    grid-area: ct;
+    background-color: black;
+}
+
+/* within the box 'content' */
+/* blogBox contains a imageBox and BlogHeaderbox */
+.blogBox{
+    display: flex;
+    justify-content: start;
+    padding-top: 15px;
+    
+}
+.imageBox{
+    height: 250px;
+    width: 40%;
+    background-position: center;
+    background-size: cover;
+
+}
+/* images in each blogBox */
+#imageOne{
+    background-image: url(../images/freedom.jpg);}
+    
+
+#imageTwo{
+    background-image: url(../images/bugs.jpg);}
+    
+
+#imageThree{
+    background-image: url(../images/love.jpg);}
+
+/* header in the blogbox */
+.blogHeaderBox{
+    color: aliceblue;
+    text-align: start;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+/* wider screens from 901px */
+
+@media(min-width:900px) {
+    .container{
+        grid-template-areas: "bn bn bn bn bn" "ct ct sb sb sb" "ft ft ft ft ft";
+    }
+    #sidebar{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        color: aliceblue;
+    }
+
+   
+}
+
+.sidebarImageBox{
+    color: aliceblue;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
+#sidebarImageOne{background-image: url(../images/progress.jpg);}
+#sidebarImageTwo{background-image: url(../images/think.jpg);}
+#sidebarImageThree{background-image: url(../images/meditate.jpg);}
+#sidebarImageFour{background-image: url(../images/trump.jpg);}

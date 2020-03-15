@@ -1,0 +1,50 @@
+body{background-color: black;}
+p{color: aliceblue;}
+a{color: aliceblue;}
+.container{
+    
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100px 400px 400px 200px 100px;
+    grid-template-rows: 300px 100px 300px 500px ;
+    grid-template-areas: 
+    "img img img img img"
+    "img img img img img"
+    "aImg aImg auth auth auth"
+    "txt txt txt txt txt";
+    gap: 25px;
+}
+
+#blogImageBox{ 
+    grid-area: img;
+    text-align: center;
+    color: aliceblue;
+    background-image: url(../images/meditate.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#blogAuthorImageBox{
+    
+    grid-area: aImg;
+    background-image: url(../images/author.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+#authorText{
+    grid-area: auth;
+    color: aliceblue;
+    padding-left: 15px;
+}
+#blogText{
+    grid-area: txt;
+    color: aliceblue;
+    padding-top: 25px;
+}
+
+#blogPostText{
+    font-style: italic;
+}
