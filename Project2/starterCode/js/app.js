@@ -45,11 +45,16 @@ header.style.backgroundColor = 'blue'
 
 // add buttons to the navBar depending of the sections nodelist length
 sections.forEach(el => {
+    //create button for each li element
     let button = document.createElement('BUTTON');
     button.innerHTML = el.id;
     button.className = el.id;
 
-    navBar.appendChild(button);
+    //create li element and stick an button to it
+    let li = document.createElement('li');
+    li. appendChild(button);
+
+    navBar.appendChild(li);
 
 });
 
@@ -77,7 +82,7 @@ function scrollToSection(e) {
     //get scrollto section id with button clicked class name
     let currentSection = document.getElementById(e.target.className);
 
-    currentSection.scrollIntoView(∏);
+    currentSection.scrollIntoView();
     //set the section actvie and change buttons color
     setSectionActive(currentSection);
 }
