@@ -58,6 +58,20 @@ sections.forEach(el => {
 
 });
 
+//implement a eventlistener to get e´windows Y position
+
+window.addEventListener('scroll', ()=>{
+
+    sections.forEach(sec => {
+       
+        if(isElementInViewport(sec)) {
+            setSectionActive(sec);
+        }
+
+    });
+});
+
+
 //get the buttons style them and put an eventlistener to each of them 
 let buttons = document.querySelectorAll('button');
 buttons.forEach(btn => {
@@ -82,9 +96,9 @@ function scrollToSection(e) {
     //get scrollto section id with button clicked class name
     let currentSection = document.getElementById(e.target.className);
 
-    currentSection.scrollIntoView(true, {behavior:"smooth"});
+    currentSection.scrollIntoView( {behavior:"smooth",block:'start'});
     //set the section actvie and change buttons color
-    setSectionActive(currentSection);
+   // setSectionActive(currentSection);
 }
 
 //function to set the sections classNames to active
@@ -127,7 +141,7 @@ http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visibl
 function isElementInViewport(el) {
     var rect = el.getBoundingClientRect();
     return (
-      rect.top >= 0 &&
+      rect.top >= -5 &&
       rect.left >= 0 &&
       rect.bottom <= (window.innerHeight || document. documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document. documentElement.clientWidth)
@@ -135,33 +149,9 @@ function isElementInViewport(el) {
   }
 
 
-//implement a eventlistener to get e´windows Y position
 
-window.addEventListener('scroll', ()=>{
 
-    sections.forEach(sec => {
-       
-        if(isElementInViewport(sec)) {
-            setSectionActive(sec);
-        }
 
-    });
-});
-
-//iterate through each section and set eventlistener 
-/* sections.forEach(sec => {
-    console.log(sec.getBoundingClientRect().top);
-    console.log(sec.getBoundingClientRect().bottom);
-    //add event listerner to each section
-    sec.addEventListener('scroll', (evt) => {
-        console.log('scrolling');
-        console.log(sec.getClientRects());
-        //get current section 
-        let el = document.getElementById(evt.currentTarget.id);
-        //set section active 
-        setSectionActive(el);
-    })
-}); */
 
 
 
