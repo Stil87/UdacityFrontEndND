@@ -82,7 +82,7 @@ function scrollToSection(e) {
     //get scrollto section id with button clicked class name
     let currentSection = document.getElementById(e.target.className);
 
-    currentSection.scrollIntoView();
+    currentSection.scrollIntoView(true, {behavior:"smooth"});
     //set the section actvie and change buttons color
     setSectionActive(currentSection);
 }
@@ -118,19 +118,50 @@ function setSectionActive(el) {
 
 }
 
+/*
+No jQuery necessary.
+Thanks to Dan's StackOverflow answer for this:
+http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+*/
+
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document. documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document. documentElement.clientWidth)
+    );
+  }
 
 
+//implement a eventlistener to get e´windows Y position
+
+window.addEventListener('scroll', ()=>{
+
+    sections.forEach(sec => {
+       
+        if(isElementInViewport(sec)) {
+            setSectionActive(sec);
+        }
+
+    });
+});
 
 //iterate through each section and set eventlistener 
-sections.forEach(sec => {
+/* sections.forEach(sec => {
+    console.log(sec.getBoundingClientRect().top);
+    console.log(sec.getBoundingClientRect().bottom);
     //add event listerner to each section
-    sec.addEventListener('mouseover', (evt) => {
+    sec.addEventListener('scroll', (evt) => {
+        console.log('scrolling');
+        console.log(sec.getClientRects());
         //get current section 
         let el = document.getElementById(evt.currentTarget.id);
         //set section active 
         setSectionActive(el);
     })
-});
+}); */
 
 
 
