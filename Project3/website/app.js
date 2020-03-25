@@ -1,6 +1,6 @@
 /* Global Variables */
 //create the variables for API request
-let apiKey = '&appid=XXXXX';
+const apiKey = '&appid=888961953e658d885a99febce63222df';
 
 let api = `http://api.openweathermap.org/data/2.5/weather?q=`;
 
@@ -13,7 +13,7 @@ document.getElementById('generate').addEventListener('click', generate);
 
 async function generate() {
     //get City
-    let city = document.getElementById('city').value;
+    let city = document.getElementById('zip').value;
     //get feelings
     let feelings = document.getElementById('feelings').value;
 
