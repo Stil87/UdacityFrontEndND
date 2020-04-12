@@ -1,0 +1,41 @@
+.box {
+    font-size: large;
+    color: #00F;
+    border-radius: 20%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+   /*  */
+    background-color: red;
+    /* text-align: center;  */
+    /* border: 3px solid blue;
+    margin: 10px;
+    padding: 5px; */
+    
+
+    
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 35vw 35vw;
+    grid-template-rows: 45vh 45vh;
+    grid-template-areas: 
+    "t t u u u"
+    "bl br br br c";
+    border: 2px solid purple ; 
+    justify-content: center;
+    
+}
+.insidebox{
+    background-color: aqua;
+    
+}
+
+
+#first {
+    font-weight: bold;
+    grid-area: br;
+
+}
+

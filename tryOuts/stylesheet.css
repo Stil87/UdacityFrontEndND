@@ -1,0 +1,29 @@
+.box {
+    font-size: large;
+    color: #00F;
+    width:200px;
+    height: 250px;
+    border-radius: 20%;
+    background-color: red;
+    text-align: center;
+    border: 3px solid blue;
+    margin: 10px;
+    padding: 5px;
+    
+
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+#first {
+    font-weight: bold;
+}
+
+button {
+    background-color: blue;
+}

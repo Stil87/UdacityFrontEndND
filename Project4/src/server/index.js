@@ -4,8 +4,8 @@ const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
-app.use(express.static('dist'))
-
+app.use(express.static('/Users/tillschmidt/Documents/Dev/web/udacity_FE/Project4/src'))
+console.log('dirname:')
 console.log(__dirname)
 
 app.get('/', function (req, res) {
