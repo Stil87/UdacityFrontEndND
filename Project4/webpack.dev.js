@@ -10,6 +10,10 @@ module.exports = {
     entry: './client/index.js',
     context: path.resolve(__dirname, './src'),
     mode: 'development',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     devServer: {
         contentBase: "./src/client/views",
         hot: true
