@@ -9,7 +9,7 @@ console.log('dirname:')
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve('/dist/index.html'))
+    res.sendFile(path.resolve('./dist/index.html'))
     //res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
